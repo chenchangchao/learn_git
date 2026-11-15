@@ -119,3 +119,37 @@ git rm -r --cached ## 清除暂存区所有跟踪记录，重新暂存提交
 ## resources
 * https://www.atlassian.com/git/tutorials/gitk # GitK，图形化界面
 
+  ## 工程发布到生产环境的流程
+  tmux attach -t server 
+
+解压缩7z文件,7z x iot-brain.7z
+cd backend,npm i
+cd frontend,npm i
+修改配置环境变量,npm run build
+打包为zip文件,zip -r iot-brain.zip iot-brain/
+远程传输到服务器,scp iot-brain.zip chenchangchao@11.53.176.236:/home/chenchangchao/workdir
+unzip iot-brain.zip
+QQ邮箱授权码
+https://github.com/christopherliedtke/vueX_nodeExpress_mongoDB_wAuth_starter
+https://dev.to/jscrambler/best-practices-for-secure-session-management-in-node-3f01
+https://dev.to/christopherliedtke/how-to-verify-your-users-email-addresses-node-js-express-dg0
+https://www.tutsmake.com/node-js-express-mysql-email-verification-tutorial/
+
+## Initial config
+* git config --global user.name "chenchangchao"
+* git config --global user.email "chenchangchao@360.cn"
+* git config --global color.ui auto
+* ssh-keygen -t rsa -C "chenchangchao@360.cn"
+* cat ~/.ssh/id_rsa.pub # add SSH Key
+* git log
+* git status
+
+
+
+## dev guide
+* git add . 
+* git commit -m "my first commit"
+* git push -u origin master 
+* git pull origin main // 将远程仓库的更改拉取到本地仓库。
+* git remote -v // 查看远程仓库
+
